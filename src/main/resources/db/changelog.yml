@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-init-database
+      author: Pryakhin Daniil
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/001-init-database.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
