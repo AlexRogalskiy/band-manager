@@ -9,3 +9,14 @@ databaseChangeLog:
             relativeToChangelogFile: true
             splitStatements: true
             stripComments: false
+  - changeSet:
+      id: 002-add-unique-name
+      author: Pryakhin Daniil
+      runOnChange: true
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/002-add-unique-name.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false

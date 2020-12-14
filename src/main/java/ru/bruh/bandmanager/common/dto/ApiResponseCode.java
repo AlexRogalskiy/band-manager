@@ -4,14 +4,13 @@ import java.io.Serializable;
 
 public enum ApiResponseCode implements Serializable {
     BAD_CREDENTIALS(1, "Неверное имя пользователя или пароль"),
-    TOKEN_EXPIRED(2, "Время жизни токена окончено"),
-    INVALID_TOKEN(3, "Невалидный токен"),
-    INVALID_TOKEN_SIGNATURE(4, "Невалидная подпись токена"),
-    INVALID_TOKEN_DATA(5, "Невалидные данные в токене"),
-    ACCESS_DENIED(6, "Доступ запрещен"),
-    INTERNAL_SERVER_ERROR(7, "Неизвестная ошибка сервера"),
-    NOT_FOUND(8, "Запрашиваемый ресурс не найден"),
-    METHOD_NOT_ALLOWED(9, "неверный HTTP метод");
+    ACCESS_DENIED(2, "Доступ запрещен"),
+    INTERNAL_SERVER_ERROR(3, "Неизвестная ошибка сервера"),
+
+    COUNTRY_NOT_FOUND(4, "Страна на найдена"),
+    BAND_NOT_FOUND(5, "Группа не найдена"),
+    MEMBER_ROLE_NOT_FOUND(6, "Амплуа не найдено"),
+    MEMBER_NOT_FOUND(7, "Участник не найден");
 
     private final int code;
     private final String description;

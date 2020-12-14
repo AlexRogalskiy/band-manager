@@ -6,5 +6,6 @@ import ru.bruh.bandmanager.common.security.model.UserEntity;
 
 @Mapper(componentModel = "spring")
 public interface UserEntityMapper {
+
     UserEntity toUserEntity(SignInRequest request);
 }
