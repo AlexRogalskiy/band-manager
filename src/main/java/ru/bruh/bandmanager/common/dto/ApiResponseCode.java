@@ -11,7 +11,9 @@ public enum ApiResponseCode implements Serializable {
     BAND_NOT_FOUND(5, "Группа не найдена"),
     MEMBER_ROLE_NOT_FOUND(6, "Амплуа не найдено"),
     MEMBER_NOT_FOUND(7, "Участник не найден"),
-    SONG_NOT_FOUND(8, "Песня не найдена");
+    SONG_NOT_FOUND(8, "Песня не найдена"),
+    NEW_HIT_PARADE_POSITION_EQUALS_CURRENT_POSITION(9,"Новая позиция в хитпараде равна текущей"),
+    INVALID_HIT_PARADE_POSITION(10,"Некорректная позиция в хитпараде");
 
     private final int code;
     private final String description;

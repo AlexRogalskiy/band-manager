@@ -1,6 +1,6 @@
 package ru.bruh.bandmanager.rest;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
 import ru.bruh.bandmanager.rest.dto.band.BandRequest;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/band")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BandController {
 
     private final BandService service;
@@ -27,7 +27,7 @@ public class BandController {
     }
 
     @GetMapping("/list")
-    public ApiResponse<List<BandResponse>> update() {
+    public ApiResponse<List<BandResponse>> list() {
         return ApiResponse.success(service.getList());
     }
 }
