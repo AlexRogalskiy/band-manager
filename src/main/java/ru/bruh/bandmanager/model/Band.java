@@ -23,8 +23,4 @@ public class Band {
     private Country country;
 
     private LocalDateTime formationYear;
-
-    @OneToOne
-    @JoinColumn(referencedColumnName = "band_id", name = "id")
-    private HitParade hitParade;
 }

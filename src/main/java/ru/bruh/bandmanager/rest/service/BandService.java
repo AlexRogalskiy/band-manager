@@ -34,18 +34,18 @@ public class BandService {
         bandRepository.save(band);
 
         hitParadeRepository.save(new HitParade().setBand(band).setPosition(hitParadeRepository.getLastPosition()));
-        return mapper.toBandResponse(band);
+        return mapper.toResponse(band);
     }
 
     public BandResponse get(String name) {
         Band band = bandRepository.findByName(name)
                 .orElseThrow(() -> new BusinessException(ApiResponseCode.BAND_NOT_FOUND));
 
-        return mapper.toBandResponse(band);
+        return mapper.toResponse(band);
     }
 
     public List<BandResponse> getList() {
         return bandRepository.findAll().stream()
-                .map(mapper::toBandResponse).collect(Collectors.toList());
+                .map(mapper::toResponse).collect(Collectors.toList());
     }
 }

@@ -16,7 +16,7 @@ public interface BandMapper {
     @Mapping(target = "formationYear", qualifiedByName = "toLocalDateTime")
     Band toBand(BandRequest request);
 
-    BandResponse toBandResponse(Band band);
+    BandResponse toResponse(Band band);
 
     @Named("toLocalDateTime")
     default LocalDateTime yearToLocalDateTime(String year) {

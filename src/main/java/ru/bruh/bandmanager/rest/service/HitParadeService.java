@@ -9,19 +9,24 @@ import ru.bruh.bandmanager.model.Band;
 import ru.bruh.bandmanager.model.HitParade;
 import ru.bruh.bandmanager.rest.dto.band.BandResponse;
 import ru.bruh.bandmanager.rest.dto.hitparade.ChangeBandPositionRequest;
+import ru.bruh.bandmanager.rest.dto.hitparade.HitParadeBandResponse;
 import ru.bruh.bandmanager.rest.mapper.BandMapper;
+import ru.bruh.bandmanager.rest.mapper.HitParadeMapper;
 import ru.bruh.bandmanager.rest.repository.BandRepository;
 import ru.bruh.bandmanager.rest.repository.HitParadeRepository;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class HitParadeService {
 
     private final HitParadeRepository hitParadeRepository;
+    private final HitParadeMapper mapper;
 
     private final BandRepository bandRepository;
     private final BandMapper bandMapper;
-
 
     @Transactional
     public BandResponse changeBandPosition(ChangeBandPositionRequest request) {
@@ -45,6 +50,13 @@ public class HitParadeService {
             hitParadeRepository.movePositionUp(newPosition, currentPosition);
         }
         hitParade.setPosition(newPosition);
-        return bandMapper.toBandResponse(band);
+        return bandMapper.toResponse(band);
+    }
+
+    public List<HitParadeBandResponse> getHitParade() {
+        return hitParadeRepository.getAllByOrderByPosition()
+                .stream()
+                .map(mapper::toResponse)
+                .collect(Collectors.toList());
     }
 }
