@@ -3,10 +3,7 @@ package ru.bruh.bandmanager.model;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -14,7 +11,8 @@ import javax.persistence.Id;
 public class Country {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "countrySequence", sequenceName = "country_sequence", allocationSize = 1)
+    @GeneratedValue(generator = "countrySequence")
     private Long id;
 
     private String name;

@@ -1,11 +1,11 @@
-package ru.bruh.bandmanager.rest.service.member.role;
+package ru.bruh.bandmanager.rest.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.bruh.bandmanager.rest.dto.member.role.MemberRoleRequest;
 import ru.bruh.bandmanager.rest.dto.member.role.MemberRoleResponse;
-import ru.bruh.bandmanager.rest.mapper.member.role.MemberRoleMapper;
-import ru.bruh.bandmanager.rest.repository.member.MemberRoleRepository;
+import ru.bruh.bandmanager.rest.mapper.MemberRoleMapper;
+import ru.bruh.bandmanager.rest.repository.MemberRoleRepository;
 
 @Service
 @RequiredArgsConstructor

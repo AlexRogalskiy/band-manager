@@ -10,7 +10,8 @@ public enum ApiResponseCode implements Serializable {
     COUNTRY_NOT_FOUND(4, "Страна на найдена"),
     BAND_NOT_FOUND(5, "Группа не найдена"),
     MEMBER_ROLE_NOT_FOUND(6, "Амплуа не найдено"),
-    MEMBER_NOT_FOUND(7, "Участник не найден");
+    MEMBER_NOT_FOUND(7, "Участник не найден"),
+    SONG_NOT_FOUND(8, "Песня не найдена");
 
     private final int code;
     private final String description;

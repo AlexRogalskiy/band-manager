@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
 import ru.bruh.bandmanager.rest.dto.country.CountryRequest;
 import ru.bruh.bandmanager.rest.dto.country.CountryResponse;
-import ru.bruh.bandmanager.rest.service.country.CountryService;
+import ru.bruh.bandmanager.rest.service.CountryService;
 
 @RestController
 @RequestMapping("/country")

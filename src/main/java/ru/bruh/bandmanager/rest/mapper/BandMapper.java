@@ -1,4 +1,4 @@
-package ru.bruh.bandmanager.rest.mapper.band;
+package ru.bruh.bandmanager.rest.mapper;
 
 
 import org.mapstruct.Mapper;

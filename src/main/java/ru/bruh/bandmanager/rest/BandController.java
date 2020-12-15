@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
 import ru.bruh.bandmanager.rest.dto.band.BandRequest;
 import ru.bruh.bandmanager.rest.dto.band.BandResponse;
-import ru.bruh.bandmanager.rest.service.band.BandService;
+import ru.bruh.bandmanager.rest.service.BandService;
 
 import java.util.List;
 

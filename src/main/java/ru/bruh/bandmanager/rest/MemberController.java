@@ -4,9 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
 import ru.bruh.bandmanager.model.Member;
+import ru.bruh.bandmanager.rest.dto.member.MemberChangeBandRequest;
 import ru.bruh.bandmanager.rest.dto.member.MemberRequest;
 import ru.bruh.bandmanager.rest.dto.member.MemberResponse;
-import ru.bruh.bandmanager.rest.service.member.MemberService;
+import ru.bruh.bandmanager.rest.service.MemberService;
 
 import java.util.Set;
 
@@ -30,5 +31,10 @@ public class MemberController {
     @GetMapping("/band-member-list")
     public ApiResponse<Set<Member>> getBandMembers(@RequestParam String bandName) {
         return ApiResponse.success(service.getBandMembers(bandName));
+    }
+
+    @PutMapping("/change-band")
+    public ApiResponse<MemberResponse> changeBand(@RequestBody MemberChangeBandRequest request) {
+        return ApiResponse.success(service.changeBand(request));
     }
 }

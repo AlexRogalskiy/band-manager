@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
 import ru.bruh.bandmanager.rest.dto.member.role.MemberRoleRequest;
 import ru.bruh.bandmanager.rest.dto.member.role.MemberRoleResponse;
-import ru.bruh.bandmanager.rest.service.member.role.MemberRoleService;
+import ru.bruh.bandmanager.rest.service.MemberRoleService;
 
 @RestController
 @RequestMapping("/member/role")

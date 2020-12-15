@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 public class Band {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "bandSequence", sequenceName = "band_sequence", allocationSize = 1)
+    @GeneratedValue(generator = "bandSequence")
     private Long id;
 
     private String name;

@@ -1,4 +1,4 @@
-package ru.bruh.bandmanager.rest.mapper.country;
+package ru.bruh.bandmanager.rest.mapper;
 
 import org.mapstruct.Mapper;
 import ru.bruh.bandmanager.model.Country;

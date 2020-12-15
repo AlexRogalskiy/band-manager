@@ -1,11 +1,11 @@
-package ru.bruh.bandmanager.rest.service.country;
+package ru.bruh.bandmanager.rest.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.bruh.bandmanager.rest.dto.country.CountryRequest;
 import ru.bruh.bandmanager.rest.dto.country.CountryResponse;
-import ru.bruh.bandmanager.rest.mapper.country.CountryMapper;
-import ru.bruh.bandmanager.rest.repository.country.CountryRepository;
+import ru.bruh.bandmanager.rest.mapper.CountryMapper;
+import ru.bruh.bandmanager.rest.repository.CountryRepository;
 
 @Service
 @RequiredArgsConstructor
