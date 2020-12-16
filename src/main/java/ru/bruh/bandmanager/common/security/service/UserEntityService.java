@@ -14,7 +14,7 @@ public class UserEntityService {
     private final UserEntityMapper mapper;
     private final PasswordEncoder passwordEncoder;
 
-    public Integer signInUser(SignInRequest request) {
+    public Long signInUser(SignInRequest request) {
         request.setPassword(passwordEncoder.encode(request.getPassword()));
         return repository.save(mapper.toUserEntity(request)).getId();
     }

@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-init-database
+      author: Pryakhin Daniil
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/001-init-database.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - changeSet:
+      id: 002-add-unique-name
+      author: Pryakhin Daniil
+      runOnChange: true
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/002-add-unique-name.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - changeSet:
+        id: 003-add-song-band-id
+        author: Pryakhin Daniil
+        runOnChange: true
+        changes:
+            - sqlFile:
+                  encoding: UTF-8
+                  path: sql/003-add-song-band-id.sql
+                  relativeToChangelogFile: true
+                  splitStatements: true
+                  stripComments: false
+  - changeSet:
+      id: 004-add-sequences
+      author: Pryakhin Daniil
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/004-add-sequences.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - changeSet:
+      id: 005-add-tour-music
+      author: Pryakhin Daniil
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/005-add-tour-music.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false

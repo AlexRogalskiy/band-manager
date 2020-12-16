@@ -1,36 +1,35 @@
 package ru.bruh.bandmanager.rest;
 
-import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
-import ru.bruh.bandmanager.common.dto.ApiResponseCode;
-import ru.bruh.bandmanager.common.exception.BusinessException;
-import ru.bruh.bandmanager.common.security.dto.Response;
+import ru.bruh.bandmanager.common.security.utils.RoleUtils;
+import ru.bruh.bandmanager.rest.dto.band.BandRequest;
+import ru.bruh.bandmanager.rest.dto.band.BandResponse;
+import ru.bruh.bandmanager.rest.service.BandService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/band")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BandController {
 
-    @GetMapping("/string")
-    public ApiResponse<String> string() {
-        return ApiResponse.success("Ey");
+    private final BandService service;
+
+    @PostMapping("/create")
+    public ApiResponse<BandResponse> create(@RequestBody BandRequest request) {
+        RoleUtils.validateCurrentUserAdmin();
+        return ApiResponse.success(service.create(request));
     }
 
-    @GetMapping("/object")
-    public ApiResponse<Response> object() {
-        return ApiResponse.success(new Response().setMessage("Ey"));
+    @GetMapping
+    public ApiResponse<BandResponse> get(@RequestParam String name) {
+        return ApiResponse.success(service.get(name));
     }
 
-    @GetMapping("business-exception")
-    public ApiResponse<String> businessException() {
-        throw new BusinessException(ApiResponseCode.BAD_CREDENTIALS);
-    }
-
-    @GetMapping("exception")
-    public ApiResponse<String> exception() {
-        throw new NullPointerException();
+    @GetMapping("/list")
+    public ApiResponse<List<BandResponse>> list() {
+        return ApiResponse.success(service.getList());
     }
 }

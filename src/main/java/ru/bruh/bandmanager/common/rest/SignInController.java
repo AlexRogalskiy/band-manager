@@ -16,7 +16,7 @@ public class SignInController {
     private final UserEntityService userEntityService;
 
     @PostMapping
-    public ApiResponse<Integer> signIn(@RequestBody SignInRequest request) {
+    public ApiResponse<Long> signIn(@RequestBody SignInRequest request) {
         return ApiResponse.success(userEntityService.signInUser(request));
     }
 }
