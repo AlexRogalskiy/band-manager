@@ -26,13 +26,13 @@
             "description": "",
             "id": "pair_97cba76b86c849b4b95937b5c0ad4172",
             "name": "username",
-            "value": "user"
+            "value": "admin"
           },
           {
             "description": "",
             "id": "pair_7205d3a5734e48f981902181f896a338",
             "name": "password",
-            "value": "user"
+            "value": "admin"
           }
         ]
       },
@@ -100,7 +100,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"username\": \"user\",\n\t\"password\": \"user\"\n}"
+        "text": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
       },
       "parameters": [],
       "headers": [
