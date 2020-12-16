@@ -3,6 +3,7 @@ package ru.bruh.bandmanager.rest;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
+import ru.bruh.bandmanager.common.security.utils.RoleUtils;
 import ru.bruh.bandmanager.model.Member;
 import ru.bruh.bandmanager.rest.dto.member.MemberChangeBandRequest;
 import ru.bruh.bandmanager.rest.dto.member.MemberRequest;
@@ -25,6 +26,7 @@ public class MemberController {
 
     @DeleteMapping
     public ApiResponse<Long> delete(@RequestParam String name) {
+        RoleUtils.validateCurrentUserAdmin();
         return ApiResponse.success(service.delete(name));
     }
 

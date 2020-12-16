@@ -3,7 +3,7 @@ package ru.bruh.bandmanager.common.dto;
 import java.io.Serializable;
 
 public enum ApiResponseCode implements Serializable {
-    BAD_CREDENTIALS(1, "Неверное имя пользователя или пароль"),
+    INSUFFICIENT_RIGHTS(1, "Недостаточно прав"),
     ACCESS_DENIED(2, "Доступ запрещен"),
     INTERNAL_SERVER_ERROR(3, "Неизвестная ошибка сервера"),
 

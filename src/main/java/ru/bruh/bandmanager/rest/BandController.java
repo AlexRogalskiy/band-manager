@@ -3,6 +3,7 @@ package ru.bruh.bandmanager.rest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
+import ru.bruh.bandmanager.common.security.utils.RoleUtils;
 import ru.bruh.bandmanager.rest.dto.band.BandRequest;
 import ru.bruh.bandmanager.rest.dto.band.BandResponse;
 import ru.bruh.bandmanager.rest.service.BandService;
@@ -18,6 +19,7 @@ public class BandController {
 
     @PostMapping("/create")
     public ApiResponse<BandResponse> create(@RequestBody BandRequest request) {
+        RoleUtils.validateCurrentUserAdmin();
         return ApiResponse.success(service.create(request));
     }
 

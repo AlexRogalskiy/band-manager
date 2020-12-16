@@ -2,12 +2,12 @@ package ru.bruh.bandmanager.common.security.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import ru.bruh.bandmanager.common.security.model.UserEntity;
 import ru.bruh.bandmanager.common.security.repository.UserEntityRepository;
+import ru.bruh.bandmanager.common.security.utils.RoleUtils;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Collections;
@@ -22,7 +22,7 @@ public class UserService implements UserDetailsService {
         UserEntity user = repository.findByUsername(username)
                 .orElseThrow(() -> new EntityNotFoundException("Пользователь не найден"));
 
-        GrantedAuthority authority = new SimpleGrantedAuthority("ADMIN");
+        GrantedAuthority authority = RoleUtils.getUserRole(user);
         return new org.springframework.security.core.userdetails.User(
                 user.getUsername(), user.getPassword(), Collections.singletonList(authority));
     }

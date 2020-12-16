@@ -3,6 +3,7 @@ package ru.bruh.bandmanager.rest;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.bruh.bandmanager.common.dto.ApiResponse;
+import ru.bruh.bandmanager.common.security.utils.RoleUtils;
 import ru.bruh.bandmanager.rest.dto.band.BandResponse;
 import ru.bruh.bandmanager.rest.dto.hitparade.ChangeBandPositionRequest;
 import ru.bruh.bandmanager.rest.dto.hitparade.HitParadeBandResponse;
@@ -19,6 +20,7 @@ public class HitParadeController {
 
     @PutMapping("/change-band-position")
     public ApiResponse<BandResponse> changeBandPosition(@RequestBody ChangeBandPositionRequest request) {
+        RoleUtils.validateCurrentUserAdmin();
         return ApiResponse.success(service.changeBandPosition(request));
     }
 
