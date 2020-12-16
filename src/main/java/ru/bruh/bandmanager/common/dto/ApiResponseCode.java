@@ -13,7 +13,9 @@ public enum ApiResponseCode implements Serializable {
     MEMBER_NOT_FOUND(7, "Участник не найден"),
     SONG_NOT_FOUND(8, "Песня не найдена"),
     NEW_HIT_PARADE_POSITION_EQUALS_CURRENT_POSITION(9,"Новая позиция в хитпараде равна текущей"),
-    INVALID_HIT_PARADE_POSITION(10,"Некорректная позиция в хитпараде");
+    INVALID_HIT_PARADE_POSITION(10,"Некорректная позиция в хитпараде"),
+    INVALID_TICKET_PRICE(11, "Некорректная цена за билет"),
+    INVALID_TOUR_DATES(12, "Некорректные даты начала и конца гастролей");
 
     private final int code;
     private final String description;
