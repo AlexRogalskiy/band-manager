@@ -41,3 +41,13 @@ databaseChangeLog:
             relativeToChangelogFile: true
             splitStatements: true
             stripComments: false
+  - changeSet:
+      id: 005-add-tour-music
+      author: Pryakhin Daniil
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: sql/005-add-tour-music.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false

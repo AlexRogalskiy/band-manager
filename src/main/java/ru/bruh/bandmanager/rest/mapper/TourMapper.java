@@ -6,6 +6,7 @@ import org.mapstruct.Named;
 import ru.bruh.bandmanager.model.Tour;
 import ru.bruh.bandmanager.rest.dto.tour.TourRequest;
 import ru.bruh.bandmanager.rest.dto.tour.TourResponse;
+import ru.bruh.bandmanager.rest.dto.tour.song.TourRecordResponse;
 
 import java.time.temporal.ChronoUnit;
 
@@ -16,6 +17,9 @@ public interface TourMapper {
 
     @Mapping(target = "durationWeeks", source = "tour", qualifiedByName = "getDurationWeeks")
     TourResponse toResponse(Tour tour);
+
+
+    TourRecordResponse toRecord(Tour tour);
 
     @Named("getDurationWeeks")
     default Long getDurationWeeks(Tour tour) {
